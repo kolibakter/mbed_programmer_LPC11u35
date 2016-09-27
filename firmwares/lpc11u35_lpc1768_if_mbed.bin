@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <title>
+    mbed-HDK - a mercurial repository
+ | mbed</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQHVVBUGwQDUVJSBQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-963.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"0c341c3bde","agent":"","transactionName":"Z11UMERTXUUEWhYLXV4XcBFYUUdfCldND1BVXBgWU0JcRQxNDRBbVUsYEl9XREVfSwcSXW9cUxBXW18=","applicationID":"735302,5266396","errorBeacon":"bam.nr-data.net","applicationTime":265}</script>
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="user-scalable=yes,width=device-width,initial-scale=0.9"/>
+
+    
+
+    <!-- Included CSS Files -->
+    <link type="text/css" href="/static/A.css,,_app.css+css,,_mbed.css+css,,_questions.css+css,,_responsive-tables.css+webfonts,,_ss-standard.css+css,,_general_foundicons.css+css,,_social_foundicons.css,Mcc.wDkmyNZLJA.css.pagespeed.cf.dTwhPWwGQF.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600italic,600,700italic,700,800italic,800">
+
+    <script src="/static/js/foundation/modernizr.foundation.js.pagespeed.jm.fHFG8H195u.js"></script>
+<script src="/static/js/foundation/jquery.js.pagespeed.jm.qG3eX37gsb.js"></script>
+<script src="/static/js/date.js+mbedcom.js+jquery.timeago.js+jquery.cycle.all.latest.js.pagespeed.jc.l0PUS01Hn6.js"></script><script>eval(mod_pagespeed_Ofw5$xybCR);</script>
+<script>eval(mod_pagespeed_WKG7Pme_wq);</script>
+<script>eval(mod_pagespeed_5dtSPSSlBV);</script>
+<script>eval(mod_pagespeed_sgzDt0TR$s);</script>
+<script src="/static/js/json2.js+foundation,_jquery.event.move.js+foundation,_jquery.event.swipe.js+foundation,_jquery.foundation.alerts.js+foundation,_jquery.foundation.buttons.js+foundation,_jquery.foundation.forms.js+foundation,_jquery.foundation.navigation.js+foundation,_jquery.foundation.tabs.js+foundation,_jquery.foundation.reveal.js+foundation,_jquery.foundation.topbar.js+foundation,_jquery.placeholder.js+foundation,_responsive-tables.js+jquery.smooth-scroll.min.js.pagespeed.jc.odck0T0Rv5.js"></script><script>eval(mod_pagespeed_SZ_1k$2DaU);</script>
+<script>eval(mod_pagespeed_dLrHXePpSz);</script>
+<script>eval(mod_pagespeed_i2SP3Stp1X);</script>
+<script>eval(mod_pagespeed_567YJB4z3s);</script>
+<script>eval(mod_pagespeed_UxfahZVCG4);</script>
+<script>eval(mod_pagespeed_AYmLeGe3xm);</script>
+<script>eval(mod_pagespeed_a2gdlseRvJ);</script>
+<script>eval(mod_pagespeed_pHsAO6E8d4);</script>
+<script>eval(mod_pagespeed_zuece6P4An);</script>
+<script>eval(mod_pagespeed_dAoq3OW7vY);</script>
+<script>eval(mod_pagespeed_WznPWbuyz_);</script>
+<script>eval(mod_pagespeed_9AuvBNBptM);</script>
+<script>eval(mod_pagespeed__yzEbVRriU);</script>
+<script src="/static/webfonts,_ss-standard.js+webfonts,_ss-social.js+js,_foundation,_app.js.pagespeed.jc.9Vx21zQEIr.js"></script><script>eval(mod_pagespeed_yHz83s_fwC);</script>
+<script>eval(mod_pagespeed_p5p2wzu3Cx);</script>
+<script>eval(mod_pagespeed_fBYX5Lh9yl);</script>
+
+    
+    
+<!--[if IE]><script type="text/javascript" src="/static/js/excanvas.js"></script><![endif]-->
+  <link rel="stylesheet" type="text/css" href="/static/css/hgstyle.css"/>
+
+</head>
+
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../common_menu.css">
+<style>
+@charset "UTF-8";
+/* CSS Document */
+
+body { font-family: "Open Sans", Arial, sans-serif; }
+
+.common-top-bar .dropdown, .sub-bar .dropdown { border: none; box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.3); top: 100%; left: 0px!important; }
+
+/* main nav */
+.common-top-bar { padding: 0px 0.5em; min-height:60px;}
+.common-top-bar .columns { padding-left: 0; }
+.common-top-bar { background: #fff; }
+.common-top-bar ul li { border-top: 5px solid #fff;}
+.common-top-bar ul li a { font-size: 0.9em; color: #7a7a7a; font-weight: 400; margin: 0.6rem 0; padding: 0.1rem 0.8rem; }
+.common-top-bar ul li.logo a { padding-left: 0.1rem;}
+.common-top-bar .menu li a img.logo { min-width: 50px!important; height: 24px;
+    width: 168px;
+    margin-bottom: 5px;}
+.common-top-bar .search .button { border:none; background: none; border-color: none; color: #7a7a7a; position: absolute; top: 2px;  right: 0; }
+.common-top-bar .search form { position: relative; padding: 0 0; width: 100%!important;}
+.common-top-bar .search form, .common-top-bar .search form input { width: 100%; max-width: 100%; height:40px;}
+.common-top-bar input {  margin: 10px 0.3em 10px 0;  max-width: auto; top: 0;}
+.common-top-bar ul li.selected { border-top: 5px solid #fff; }
+.common-top-bar ul li.dev.selected { border-top: 5px solid #00C3DC; }
+.common-top-bar ul li.partners.selected { border-top: 5px solid #8A6EAF; }
+.menu > li {
+    display: table-cell;
+}
+.menu{padding-left:0px;}
+.common-top-bar ul li.selected a:link, .off-canvas-wrap{background:white;}
+/* sub nav */
+.sub-bar { background-color: #0a7084; }
+.sub-bar a { color: #fff; font-size: 0.9em;}
+.has-dropdown .dropdown a { color: #7a7a7a; }
+.sub-bar .row { margin: 0 auto; }
+.sub-bar.mbedcom .row { max-width: 62.5rem; }
+.sub-bar.dev .row { max-width: 100%;  width: 1200px; }
+.sub-bar.dev { display: none; background: #128CAB; }
+.sub-bar.partners { display: none; background: #6A4E93; }
+.sub-bar.partners .row {/* max-width: 62.5rem; */}
+.sub-bar ul li { padding: 0.8rem 0; }
+.sub-bar ul li a { padding: 0.2em 1em 0.2em 1em; }
+.sub-bar .user-links { padding: 0.4rem 0; }
+.sub-bar .user-links a { padding: 0.6em 1em; background: rgba(0, 195, 220, 1); font-weight: 600; margin-right: 1rem; margin-left: 1rem;}
+.sub-bar .user-links a:hover { background: rgba(0, 195, 220, 0.5); }
+.sub-bar .dropdown { padding: 0.3rem;}
+.sub-bar .dropdown li { padding: 0.2rem 0; }
+
+.language .dropdown a { border: none; }
+.menu .active a { background: #fff; }
+ul.menu {
+    margin-left: 0;
+}
+.dropdown.menu li.is-dropdown-submenu-parent a::after { border: #fff; }
+
+ul.menu li.has-dropdown ul.dropdown li a {
+    background-image: none;
+    display: block;
+    line-height: 1.4em;
+    padding: 5px 10px;
+}
+ul.menu li a .fa { margin-left: 8px; }
+iframe { height: 100%; }
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(20, 20, 20, 0.4);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(20, 20, 20, 0.4);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(20, 20, 20, 0.4);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    rgba(20, 20, 20, 0.4);
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+   .sub-bar.dev ul li a { padding-left: 0.3rem; padding-right: 0.3rem; }
+   .sub-bar.dev ul li.user-links a { padding-left: 1rem; padding-right: 1rem; }
+   .sub-bar.dev ul li.home a { background: blue1; }
+}
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+   /* main nav */
+   .common-common-top-bar .nav, .common-common-top-bar .search { padding-left: 0; padding-right: 0;}
+   .common-common-top-bar ul li.logo a { padding-left: 0; }
+
+   .nav.columns{height:50px;}
+  
+   .common-top-bar{height:115px;}
+   /* sub nav */
+   .sub-bar ul li { padding: 0.8rem 0; }
+   .sub-bar ul li a.menutrigger { margin-left: -0.8em;  }
+   .sub-bar ul li.home a { padding: 0.2em 0.8em 0.2em 0.3em; border-right: 2px dotted rgba(255, 255, 255, 0.3);}
+   .sub-bar ul li a { padding: 0.2em 0.5em 0.2em 0.5em; }
+   .sub-bar ul li.is-accordion-submenu-parent a { padding-left: 2.1rem;}
+   .sub-bar ul li.is-accordion-submenu-parent a::after { border-color: #fff transparent transparent; left: 0.8rem; top: 55%; }
+   .sub-bar ul.sub-menu .menu.vertical.nested { background: red; }
+   .sub-bar ul.sub-menu { margin-top: 0.5rem;}
+   .sub-bar ul.sub-menu li { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+   .sub-bar ul.sub-menu li a { font-weight: 600; }
+   .sub-bar ul.sub-menu li ul a { font-weight: 300; }
+   .sub-bar ul.sub-menu li ul li { padding-top: 0.3rem; padding-bottom: 0.3rem; }
+   .sub-bar .language .dropdown { left: inherit!important; right: 0px!important; }
+ }
+
+</style>
+<div class="common-top-bar top-bar">
+    <div class="nav small-12 medium-9 columns">
+        <ul class="menu" data-dropdown-menu="t822t7-dropdown-menu" role="menubar">
+            <li class="mbedcom logo " role="menuitem">
+                <a title="back to mbed home" href="https://mbed.com" tabindex="0">
+                    <script pagespeed_no_defer="">//<![CDATA[
+(function(){var g=this,h=function(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};var l=function(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};var m=function(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n,p=function(b,d,a,c,e){this.f=b;this.h=d;this.i=a;this.c=e;this.e={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.g=c;this.b={};this.a=[];this.d={}},q=function(b,d){var a,c,e=d.getAttribute("pagespeed_url_hash");if(a=e&&!(e in b.d))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.e.height&&c<=b.e.width)}a&&(b.a.push(e),b.d[e]=!0)};p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});var r=function(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.i;b.c&&(a+="&n="+b.c);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.g&&(e="&rd="+encodeURIComponent(JSON.stringify(s())),131072>=a.length+e.length&&(a+=e),d=!0);t=a;if(d){c=b.f;b=b.h;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(u){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}},s=function(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("pagespeed_url_hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].k&&a.height>=b[e].j)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b},t="";h("pagespeed.CriticalImages.getBeaconData",function(){return t});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://developer.mbed.org/teams/mbed/code/mbed-HDK/file/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin','B6nXayd9mu',true,false,'_dIl5Suox5o');
+//]]></script><img src="https://www.mbed.com/static/img/ARMmbedLogo.svg" alt="" class="logo" pagespeed_url_hash="2453606674" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                </a>
+            </li>
+            <li class="dev selected" role="menuitem">
+                <a href="https://developer.mbed.org">
+                    Developer <span class="hide-for-small-only">Resources</span>
+                </a>
+            </li>
+            <li class="partners " role="menuitem">
+                <a href="https://partners.mbed.com">Partners</a>
+            </li>
+        </ul>
+    </div>
+    <div class="search small-12 medium-3 medium three columns">
+        <form class="search float-right" action="https://developer.mbed.org/search/" method="GET">
+            <input type="search" name="q" placeholder="Search mbed...">
+            <button type="button" class="button"><i class="general fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+    <div class="nav-wrapper hide-on-print">
+        <div class="row">
+            <div class="twelve columns navigation">
+            
+
+                <ul class="nav-bar menu-list" id="nav">
+
+                    <li class="hasdropdown not-click">
+                        <a href="#">
+                            Hardware
+                        </a>
+                        <ul class="dropdown no-bullet">
+                            <li><a href="/platforms">Platforms</a></li>
+                            <li><a href="/components/">Components</a></li>
+                        </ul>
+                    </li>
+                    <li class="hasdropdown not-click">
+                        <a href="#">
+                            Documentation
+                        </a>
+                        <ul class="dropdown no-bullet">
+                            <li><a href="/handbook/">Handbook</a></li>
+                            <li><a href="/cookbook/">Cookbook</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/code/">Code</a></li>
+                    <li><a href="/questions/">Questions</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li class="navSpacer">|</li>
+                    
+                    <li><a href="/account/login/?next=/teams/mbed/code/mbed-HDK/file/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">Log In/Signup</a></li>
+                     
+                    <li class="user-links"><a href="/compiler/" target="_blank">Compiler</a></li>
+
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="blue">
+        <div class="row" id="top">
+            <div class="six columns">
+                <div class="breadcrumbs">
+                    
+    
+    <a href="/teams/">Teams</a> &raquo; <a href="/teams/mbed/">mbed</a>
+    
+    
+ 
+        &raquo; <a href="/teams/mbed/code/">Code</a>
+        
+        &raquo; <a href="/teams/mbed/code/mbed-HDK/">mbed-HDK</a>
+
+
+                </div>
+            </div>
+            <div class="six columns header search-block">
+                
+                
+            </div>
+        </div><!-- end of #top -->
+
+        
+    </div>
+
+    
+<div class="row">
+    <div class="nine columns main-content" id="mbed-content">
+        
+
+        
+
+
+
+
+
+
+
+<div class="content-actions"></div>
+
+
+
+
+<div style="font-size: 1.6em; padding-bottom: 4px;">
+    
+        <a href="/teams/mbed/">
+            
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAACbVBMVEUAif8Ai/8AjP8Ajf8Ajv8Aj/8AkP8Akf8Akv8Ak/8AlP8Alf8Alv8Al/8AmP8Amf8BlP8Blv8Bl/8BmP8Bmf8Bmv8ClP8Clf8Clv8Cmf8Cmv8DmP8Dmf8Dmv8Dm/8Ek/8Elf8Elv8El/8Emv8Em/8Fmf8Fm/8Gm/8GnP8Hmv8HnP8Imf8InP8Knf8Lnf8Nm/8Pm/8Pn/8Qn/8SoP8ToP8Uof8VoP8Wmf8Wov8Xn/8Xov8Yov8Yo/8ZnP8Znv8Zof8aoP8bo/8bpP8cpP8dpP8epf8hov8ipf8ipv8jp/8kpv8kp/8pqf8qqP8sqv8uq/8urP8vrP8wrP8xrf8yrf8yrv81rv83r/84r/86sP87sf88r/89sf89sv8/sv9Asv9Bs/9Htf9Ktf9Lt/9Mt/9OuP9PuP9Quf9Vu/9Wu/9XvP9Zvf9bvf9dvv9iwP9jwP9lwf9lwv9sw/9uxf9wxf9wxv90x/92yP95yf96yv+AzP+BzP+K0P+N0v+P0v+Q0v+R0f+T1P+X1f+Y1v+Z1v+b1/+g2f+h1/+h2f+h2v+i2f+j2v+m2f+m3P+n2v+s3v+v3v+v3/+x3/+x4P+y4P+y4f+z4f+04f+14f+24v+44/+54/+64/+85P+95P+95f++5f/A5v/B5v/C5v/F6P/G6P/H6P/I6f/J6f/K6v/L6v/O6//P7P/S7f/U7v/W7//Y8P/Z8P/a8P/b8P/c8f/d8f/d8v/e8v/g8//h8//l9P/m9f/n9f/n9v/o9v/r9//s9//t+P/u+P/x+v/0+//3/P/4/P/5/f/6/f/7/f/8/v/9/v/+/v/+//////8ahqqgAAACS0lEQVRIx+3U51fTUBQA8KLYJu9lCCYWI1GRWLBuceAeFSdaqag4cCGKihtBC4qoKO6NWAX3Hki1bpwompD7N5nE2hZsP/A975z3cs89+eUl5948C9vpYTGJSUwSMbgYN3OxCCcw0UEwH4XQOC3qNjR2Rid84jTf2QThPyAkzKo/joUQEUVBklI5UZJEAS+G+ynpkoG4VC1jbCk6+60BHxJDhCQpgiAYRBCoD14oN8SThP5AntGypP7VPEl2WSBfDhGO2rJ5bkXVtmFrq/avprAHHu86sjcbCTw1cOuhAxtohmeogsqDXrgSIiJ5DxQAeKdN2NRtiX6B1mLUe8ojPbowKLn/CSNXFybofFv1pMIW2DO2FB7YcsE/f+rOXz9nE1ehfPi4k7Avbjc8WzG5FGojSC3kWOmAPMKWCa+xGxpsTHwNbB8Nn7LnzSxofdj9ibLKSuR0IPk9nQE1y54FbzRyJ2lw3zK1bGmbbLzP8/Qv8sRk+8oOZDnpCKjTkcsgt5KGWCvUHW5oXFdUVLgxz/FRcSWmLGtHLikaeSlrRHmF3eptm22MHzxDf3ybY4nDFMI3VS/RNU+5GEGuQT7peA8uNAM+4EUAvjOfoYZCXlDPHWs+asfrAe6eaobrYYIP+3ORVP9iPJ7QdAN7vp/+Cm/LB/ToRZU0gtpUQouo+Onvljp/NQ5Xn9fbQwgujkwkZYiEXmOSzRjJkHrxmVFpWm1jdTJDiwzNGK0lsjTNin8DRmj/i3H/Fn3yLMcH2z8UsFrAmYeSSUzS2fEHn40xjRdYyrEAAAAASUVORK5CYII=" pagespeed_url_hash="3512186497" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+
+            mbed
+        </a>
+    
+    / <a style="font-weight: bold;" href="/teams/mbed/code/mbed-HDK/">
+        
+            <i title="This repository is a program" class="fa icon_program_2" aria-hidden="true"></i>
+        
+
+        mbed-HDK</a>
+
+    
+</div>
+
+
+
+    <br/>
+    <p>The HDK is used for creating mbed enabled hardware. Give your hardware project the power of mbed!</p>
+
+
+
+
+
+
+
+    <p>
+        <i class="fa icon_repo_fork" aria-hidden="true"></i>
+        <b>Fork of</b>
+        <a href="/users/mbed_official/code/mbed-HDK/">mbed-HDK</a>
+        by <span class="authortext"><a href="/users/mbed_official/"><img alt="" class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABM0lEQVR4nN3Svy/dURgG8M/5uvRiIEQlTdAYSGoTC2E2NE0HS6cu/TOYDVaDWETijxB/gsQkKWIhQUSi2lSvH72932M4Xy7CZJD0Wc7znnOe533PkxMsxugFyF4i/p8MQlE8WItos1Dfv+P3Ys8g5qmIETntb5geJtTIq+k8KPgVU/186sM1JVUmevg6QDVPJmuHjHYzP8HSDuPvGOpgZYeRLiZ7Wd5Nk5T8Y7CdzR90ltk752MvqwdsnjE3xt8a68d8+8D2Lxa26CrfPiHj5JKjCvvniX//yWAbX/qZ3UjmOWbWeVvm83sOKymAYDHG4CEiWkoptD8XhEY6mzmt0NBAayO/r1PapUeh3uGiWozYRB6TOGTUYl1MYfAUQnEhL9xDVm8UQp0/a/B4qvgMf/2vfANpbWJeRCpkeQAAAABJRU5ErkJggg==" pagespeed_url_hash="3057136447" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/></a> <a href="/users/mbed_official/"> mbed official </a></span>
+    </p>
+
+
+
+
+
+   
+
+<div class="page-header">
+        <ul id="tabmenu">
+
+
+            <li><a href="/teams/mbed/code/mbed-HDK/">
+              Home</a></li>
+
+
+            <li><a href="/teams/mbed/code/mbed-HDK/shortlog">
+              History</a></li>
+
+
+            <li><a href="/teams/mbed/code/mbed-HDK/graph">
+             Graph</a></li>
+
+
+            <li><a href="/teams/mbed/code/mbed-HDK/docs/">
+              API Documentation</a></li>
+
+
+            <li><a href="/teams/mbed/code/mbed-HDK/wiki/">
+              Wiki</a></li>
+
+
+
+    
+                <li><a href="/teams/mbed/code/mbed-HDK/pull-requests/">
+                  Pull Requests</a></li>
+    
+
+
+
+
+
+        </ul>
+    </div>
+
+
+
+<h3>HDK</h3>
+<ul><li><a href="https://mbed.org/handbook/mbed-HDK">About the HDK</a>
+</li></ul>
+<h3>CMSIS-DAP</h3>
+<ul><li><a href="http://mbed.org/handbook/cmsis-dap-interface-firmware">CMSIS-DAP readme</a> 
+</li></ul>
+<h3>HDK and CMSIS-DAP</h3>
+<ul><li><a href="https://mbed.org/handbook/HDK-and-CMSIS-DAP">HDK and CMSIS-DAP</a></li></ul>
+
+
+
+
+<div id="container">
+      
+        <ul class="object-tools">
+            <li class="current"><a href="/teams/mbed/code/mbed-HDK/file/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">file</a></li>
+            <li><a href="/teams/mbed/code/mbed-HDK/log/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">revisions</a></li>
+            <li><a href="/teams/mbed/code/mbed-HDK/annotate/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">annotate</a></li>
+            <li><a href="/teams/mbed/code/mbed-HDK/diff/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">diff</a></li>
+            <li><a href="/teams/mbed/code/mbed-HDK/raw-file/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">raw</a></li>
+        </ul>
+
+   <div class="module">
+
+    <h2>NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin</h2>
+
+    <dl class="overview ">
+        <dt>Committer:</dt>
+        <dd>chris</dd>
+        <dt>Date:</dt>
+        <dd><abbr class="timeago" title="Tue Jul 07 09:59:59 2015 +0100">12 months ago</abbr></dd>
+        
+        <dt>Revision:</dt>
+        <dd><b><a class="list" href="/teams/mbed/code/mbed-HDK/rev/#node|short#">15:9f2ef206f287</a></b></dd>
+        <dt>Parent: </dt><dd><a href="/teams/mbed/code/mbed-HDK/file/9aa761c69da4/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin"> 2:9aa761c69da4</a></dd>
+        
+    </dl>
+
+    <div class="source">
+     <h3>File content as of revision 15:9f2ef206f287:</h3>
+        <pre class="mbed-code">
+(binary:application/octet-stream)
+            </pre>
+    </div>
+
+    </div>
+</div>
+            
+
+
+
+    </div>
+
+    <div class="three columns sidebar ">
+        
+
+
+
+
+
+
+
+<div class="panel">
+    <h5 class="subheader">Repository toolbox</h5>
+    <table id="repo_actions">
+        <tr>
+            <td>
+                
+                <a style="width: 100%;" class="button" target="compiler" href="/account/login/?next=/teams/mbed/code/mbed-HDK/file/9f2ef206f287/NXP/LPC1768/lpc11u35_lpc1768_if_mbed.bin">
+                
+                	<span>
+                        Import this
+                        
+                            program
+                        
+                	</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    	    	<a style="width: 100%;" class="button secondary small" href="/teams/mbed/code/mbed-HDK/export">
+    	    		<span>
+    	    			<i class="fa fa-cloud-download" aria-hidden="true"></i>
+    	    			Export to desktop IDE
+    	    		</span>
+    	    	</a>
+        	</td>
+        </tr>
+
+         
+        <tr>
+        	<td>
+        		<a style="width: 100%;" class="button secondary small" href="/teams/mbed/code/mbed-HDK/compile">
+        			<span><i class="fa icon_go" aria-hidden="true"></i>
+        				Build repository
+        			</span>
+        		</a>
+        	</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+    </table>
+</div>
+
+
+<div class="panel">
+    <h5 class="subheader">Repository details</h5>
+    <table>
+        
+        <tr>
+            <th>Type:</th>
+            <td>
+                <i class="fa fa-cube" aria-hidden="true"></i>
+                Program
+            </td>
+        </tr>
+        
+        <tr>
+            <th>Created:</th>
+            <td><abbr class="timeago" title="2014-05-12T10:55:29+00:00">12 May 2014</abbr></td>
+        </tr>
+        <tr>
+            <th>Imports:</th>
+            <td>
+                <a title="Number of times this repository has been imported" href="/teams/mbed/code/mbed-HDK/">
+                    <i class="fa icon_imports" aria-hidden="true"></i>
+                    317
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>Forks:</th>
+            <td>
+                <a title="Copies of this repository" href="/teams/mbed/code/mbed-HDK/forks">
+                    <i class="fa icon_repo_fork" aria-hidden="true"></i>
+                    1
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th width="40%">Commits:</th>
+            <td>
+                <a href="shortlog">
+                    <i class="fa icon_commits" aria-hidden="true"></i>
+                    16
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>Dependents:</th>
+            <td>
+                <a title="Programs or libraries which need this repository" href="/teams/mbed/code/mbed-HDK/dependents">
+                    <i class="fa icon_repo_depens" aria-hidden="true"></i>
+                    0
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>Dependencies:</th>
+            <td>
+                <a title="Libraries which this program or library needs to function" href="/teams/mbed/code/mbed-HDK/dependencies">
+                    <i class="fa icon_repo_deps fa-flip-vertical" aria-hidden="true"></i>
+                    0
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <th>Followers:</th>
+            <td>
+                <a title="Followers of this repository" href="/teams/mbed/code/mbed-HDK/followers">
+                    <i class="fa icon_add" aria-hidden="true"></i>
+                    98
+                </a>
+            </td>
+        </tr>
+        
+    </table>
+
+    
+    <p>
+        <b>
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            This repository is Public (Unlisted).
+        </b>
+    </p>
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+    <div class="row footer hide-on-print">
+        <div class="twelve columns">
+            <hr/>
+            <ul>
+                <li>&copy; mbed</li>
+                <li><a href="/blog">blog</a></li>
+                <li><a href="/handbook/Jobs">we're hiring!</a></li>
+                <li><a href="/handbook/Help">support</a></li>
+                <li><a href="/handbook/Service-status">service status</a></li>
+                <li><a href="/privacy">privacy policy</a></li>
+                <li><a href="/terms">terms and conditions</a> </li>
+            </ul>
+       </div>
+	</div>
+
+
+
+<script type="text/javascript">var gaJsHost=(("https:"==document.location.protocol)?"https://ssl.":"http://www.");document.write(unescape("%3Cscript src='"+gaJsHost+"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">try{var pageTracker=_gat._getTracker("UA-1447836-8");pageTracker._setCustomVar(1,'User Type','Guest',2);pageTracker._trackPageview();}catch(err){}</script>
+
+
+
+
+
+<div id="cookiemodule">
+    <div class="modouter">
+        <div class="modinner">
+            <h5>Important information</h5>
+            <div class="modcontent">
+                <div class="intro">
+                    <p>This site uses cookies to store information on your computer. By continuing to use our site, you consent to our
+                    <a href="/privacy/">cookies</a>.</p>
+                </div>
+                <div class="modopen">
+                    <p><p style="margin: 0cm 0cm 0pt">ARM websites use two types of cookie: (<strong>1)</strong> those that enable the site to function and perform as required; and <b>(2)</b> analytical cookies which anonymously track visitors only while using the site. If you are not happy with this use of these cookies please review our <a target="_self" href="/privacy/">Privacy Policy</a> to learn how they can be disabled. By disabling cookies some features of the site will not work.</p></p>
+                </div>
+                <button class="readmore">Read More</button>
+                <button class="accept" id="">accept and hide this message</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">jQuery(document).ready(function(){function create(name,value,days,path,domain){path=typeof path!=='undefined'?path:'/';domain=typeof domain!=='undefined'?'; domain='+domain:'';if(days){var date=new Date();date.setTime(date.getTime()+(days*24*60*60*1000));var expires="; expires="+date.toGMTString();}else{var expires="";}
+document.cookie=name+"="+value+expires+domain+"; path="+path;}
+function read(name){var nameEQ=name+"=";var ca=document.cookie.split(';');for(var i=0;i<ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1,c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length,c.length);}
+return null;}
+function erase(name){create(name,"",-1);}
+create('testCookies','yes',365,'/','.mbed.org');if(read("testCookies")=='yes'&&read("acceptCookies")!='yes'){jQuery('#cookiemodule').css('display','block');jQuery('button.readmore').click(function(){jQuery('.modopen').slideToggle('slow');if(jQuery(this).text()=="Read More"){jQuery(this).text("Read Less");}else{jQuery(this).text("Read More");};});jQuery('button.accept').click(function(){create('acceptCookies','yes',365,'/','.mbed.org');jQuery('#cookiemodule').fadeOut('slow');});jQuery('button.close').click(function(){jQuery('#cookiemodule').fadeOut('slow');});}});</script>
+
+
+<div id="flag-content" class="reveal-modal small">
+    <h2>Report Content</h2>
+    <a class="close-reveal-modal">&#215;</a>
+    <form action="" method="post" id="flag-content-form">
+        <input type='hidden' name='csrfmiddlewaretoken' value='QRvaOcrCJrDkmQZuTaASujm4p4AHo916'/>
+        <ul>
+            <li>
+                <label for="id_reason_1">
+                    <input id="id_reason_1" name="reason" type="radio" value="1"/>
+                    Spam
+                </label>
+            </li>
+            <li>
+                <label for="id_reason_2">
+                    <input id="id_reason_2" name="reason" type="radio" value="2"/>
+                    Inappropriate
+                </label>
+            </li>
+        </ul>
+        <a class="button secondary cancel-flag">Cancel</a>
+        <input type="submit" value="Report" class="button"/>
+    </form>
+</div>
+
+</body>
+</html>
